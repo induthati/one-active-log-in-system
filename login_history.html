@@ -1,0 +1,28 @@
+{% extends "dashboard_main.html" %}
+{% block content %}
+<div class="p-5 text-center bg-light">
+    <input type="hidden" name="client_history_id" id="client_history_id" value="{{data['history_id']}}">
+    <input type="hidden" name="client_my_id" id="client_my_id" value="{{data['my_id']}}">
+    <h1 class="mb-3">Login History</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>User agent</th>
+                <th>Status</th>
+                <th>Sign-in Date</th>
+                <th>Sign-out Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data['records'] %}
+            <tr>
+                <td>{{ row['user_agent'] }}</td>
+                <td>{{ 'Active' if row['login_status'] == 1 else 'Logged Out' }}</td>
+                <td>{{ row['signin_date'].strftime("%d %b %Y %I:%M:%S %p") }}</td>
+                <td>{{ row['signout_date'].strftime("%d %b %Y %I:%M:%S %p") if row['signout_date'] else '' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

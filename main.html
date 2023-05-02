@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One active login system</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      body {
+        background-color: #000;
+      }
+
+      .card {
+        width: 400px;
+        border: none;
+      }
+
+      .btr {
+        border-top-right-radius: 5px !important;
+      }
+
+      .btl {
+        border-top-left-radius: 5px !important;
+      }
+
+      .btn-dark {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      .btn-dark:hover {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      .nav-pills {
+        display: table !important;
+        width: 100%;
+      }
+
+      .nav-pills .nav-link {
+        border-radius: 0px;
+        border-bottom: 1px solid #0d6efd40;
+      }
+
+      .nav-item {
+        display: table-cell;
+        background: #0d6efd2e;
+      }
+
+      .form {
+        padding: 10px;
+        height: 300px;
+      }
+
+      .form input {
+        margin-bottom: 12px;
+        border-radius: 3px;
+      }
+
+      .form input:focus {
+        box-shadow: none;
+      }
+
+      .form button {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body className="snippet-body">
+    {% block content %}
+    {% endblock %}
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script type="text/javascript">
+      var myLink = document.querySelector('a[href="#"]');
+      myLink.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
